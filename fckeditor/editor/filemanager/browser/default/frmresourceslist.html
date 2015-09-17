@@ -308,6 +308,16 @@ function OpenFile( fileUrl )
   try {
     
     if(isInternalLink) {
+      if(parent.opener.oDokuWiki_FCKEditorInstance.dwiki_savedir) {
+      var savedir = parent.opener.oDokuWiki_FCKEditorInstance.dwiki_savedir.replace(/\//g,'\\/')  + '\/pages';    
+       var regex = new RegExp(savedir);
+      
+       if(fileUrl.match(regex)){
+           fileUrl = fileUrl.replace(regex,"");
+           fileUrl = fileUrl.replace(/^\//,"");
+       }   
+       
+      }
        fileUrl=decodeURI( fileUrl ).replace( '#', '%23' ) ;
     }
     if(isDwikiUrlExtern) {

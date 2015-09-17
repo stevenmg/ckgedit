@@ -95,7 +95,8 @@ class helper_plugin_ckgedit extends DokuWiki_Plugin {
   else {
    $user_type = 'user';
   }
-  $save_dir = DOKU_URL . ltrim($conf['savedir'],'/.\/');
+  $save_dir =  '/' .trim($conf['savedir'],'/.\/');   
+   if($save_dir == '/data') $save_dir = "";
 
   // if no ACL is used always return upload rights
   if($conf['useacl']) {
@@ -461,7 +462,7 @@ function FCKeditor_OnComplete( editorInstance )
   oDokuWiki_FCKEditorInstance.fckgUserName = "$user_name";
   oDokuWiki_FCKEditorInstance.fckgUserMail="$user_email"; 
   oDokuWiki_FCKEditorInstance.useheading = "$useheading"; 
-  
+  oDokuWiki_FCKEditorInstance.dwiki_savedir ="$save_dir";
  
   var index = navigator.userAgent.indexOf('Safari'); 
   if(index == -1  || (navigator.userAgent.indexOf('Chrome'))) {
