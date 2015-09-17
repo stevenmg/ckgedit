@@ -1,4 +1,4 @@
-rev 15-Sep_05-17_05
+rev 15-Sep_17-06_05
 
 28 Feb 2013
 Added support for interwiki links
@@ -725,3 +725,6 @@ Added line-breaks after MULTI_OPEN and before MULTI_CLOSE
 
 19 Aug
 Increased font-size of edit fonts button to 100% so that button is full size
+
+17 Sep
+Fixed broken internal links in alternate savedir
