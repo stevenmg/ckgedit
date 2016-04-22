@@ -1,3 +1,5 @@
 This is an updated dversion fckgLite.  It uses the much the same parser as the original fckgLite, but replaces the 
 FCKEditor with the upgraded CKEditor.
 
+The fb_ search branch introduces an updated file browser with search facility and ascending/descending re-ordering
+of file listing, plus removal of frames for consistency with HTML 5.
