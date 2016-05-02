@@ -8,6 +8,10 @@ Ubuntu/Debian package manager.
 
 This branch uses CKEditor 4.5.7
 
+The dw_users branch enables setting of a group which uses dw_priority when dw_priority is set to true.
+All other uwses get the CKEditor.
+
+
 
 
 
