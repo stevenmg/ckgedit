@@ -1,4 +1,4 @@
-rev_16-Apr_19-08_10
+rev_16-May_02-06_16
 
 28 Feb 2013
 Added support for interwiki links
@@ -845,3 +845,6 @@ new branch: dwpriority_group
 
 19 Apr
 Added dw_users option to set group for dw_priority; when not set, all users get dw_priority
+
+02 May
+UnSet FCKG_USE cookie in_dwpriority_group() when CKEditor is called for.

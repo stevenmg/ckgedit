@@ -627,10 +627,12 @@ function in_dwpriority_group() {
         if(!isset($USERINFO)) return false; 
          if(empty($this->dw_priority_group)) return true;
         $user_groups = $USERINFO['grps'];   
-        if(in_array($this->dw_priority_group, $user_groups) || in_array("admin", $user_groups)) {          
-           return true;
+        if(!in_array($this->dw_priority_group, $user_groups)) { 
+            $expire = time() -60*60*24*30;
+            setcookie('FCKG_USE','_false_', $expire, '/');       
+            return false;
         }
-      return false;
+           return true;
 }
 
 function restore_conf() {
