@@ -1,4 +1,4 @@
-rev_16-May_24-11_00
+rev_16-May_24-14_26
 
 28 Feb 2013
 Added support for interwiki links
@@ -892,3 +892,6 @@ Fix in save.php for $conf[deaccent]==0 (off)
 
 24 May
 Captcha support added
+Added captcha is Enabled when checking for hidden buttons:
+ hide Delete and Font Edit buttons when captcha->isEnabled() users &&  auth < 4
+ 
