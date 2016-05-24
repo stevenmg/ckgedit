@@ -893,5 +893,5 @@ Fix in save.php for $conf[deaccent]==0 (off)
 24 May
 Captcha support added
 Added captcha is Enabled when checking for hidden buttons:
- hide Delete and Font Edit buttons when captcha->isEnabled() users &&  auth < 4
+ hide Delete and Font Edit buttons when captcha->isEnabled() &&  auth < 4, i.e. no create permision
  
