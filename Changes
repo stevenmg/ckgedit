@@ -1,4 +1,4 @@
-rev_16-May_26-14_08
+rev_16-May_27-09_50
 
 28 Feb 2013
 Added support for interwiki links
@@ -897,3 +897,7 @@ Added captcha is Enabled when checking for hidden buttons:
 
 26 May
 Delete  space insertion between preceding character and following font tag where space should be closed
+
+27 May
+Set [captcha][forusers] = 0 if auth >= WRITE
+

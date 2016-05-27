@@ -546,7 +546,11 @@ function check_userfiles() {
        global $ID; 
        global $JSINFO;
        global  $INPUT;
-       
+       global $conf;
+       $auth = auth_quickaclcheck($ID);  
+       if($auth >= 4 && !empty($conf['plugin']['captcha'])) {
+           $conf['plugin']['captcha']['forusers']=0;
+       }
        $JSINFO['confirm_delete']= $this->getLang('confirm_delete');
        $JSINFO['doku_base'] = DOKU_BASE ;
        $JSINFO['cg_rev'] = $INPUT->str('rev');
