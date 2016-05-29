@@ -1,4 +1,4 @@
-rev_16-May_27-09_50
+rev_16-May_29-17_43
 
 28 Feb 2013
 Added support for interwiki links
@@ -900,4 +900,7 @@ Delete  space insertion between preceding character and following font tag where
 
 27 May
 Set [captcha][forusers] = 0 if auth >= WRITE
+
+29 May
+Default complex tables to true
 
