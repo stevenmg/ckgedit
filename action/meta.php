@@ -182,7 +182,7 @@ function replace_entities() {
     
 }
 
- function  insertFormElement(&$event, $param) {	 
+ function  insertFormElement(Doku_Event $event, $param) {	 
    global $FCKG_show_preview;  
 
   $param = array();
@@ -252,7 +252,7 @@ if($_REQUEST['fck_preview_mode'] != 'nil' && !isset($_COOKIE['FCKG_USE']) && !$F
   }
 
 
- function preprocess(&$event, $param) {	 
+ function preprocess(Doku_Event $event, $param) {	 
     $act = $event->data;
  
    if(is_string($act) && $act != 'edit') {  
@@ -541,7 +541,7 @@ function check_userfiles() {
            }
   }
 
-  function file_type(&$event, $param) {	 
+  function file_type(Doku_Event $event, $param) {	 
        global $ACT;
        global $ID; 
        global $JSINFO;
@@ -554,6 +554,7 @@ function check_userfiles() {
        $JSINFO['confirm_delete']= $this->getLang('confirm_delete');
        $JSINFO['doku_base'] = DOKU_BASE ;
        $JSINFO['cg_rev'] = $INPUT->str('rev');
+       $JSINFO['hide_captcha_error'] = $INPUT->str('ckged_captcha_err');      
 	   $this->check_userfiles(); 
 	   $this->profile_dwpriority=($this->dokuwiki_priority && $this->in_dwpriority_group()) ? 1 :  0; 
        if(isset($_COOKIE['FCK_NmSp'])) $this->set_session(); 
@@ -576,7 +577,7 @@ function check_userfiles() {
        }
   } 
 
-function loadScript(&$event) {
+function loadScript(Doku_Event $event) {
   echo <<<SCRIPT
 
     <script type="text/javascript">
@@ -606,7 +607,7 @@ SCRIPT;
  *    3. set up $REQUEST value to identify a preview when in DW Edit , used in 
  *       set_session to remove ckgedit and DW drafts if present after a DW preview  
 */
-  function setupDWEdit(&$event) {
+  function setupDWEdit(Doku_Event $event) {
   global $ACT;
 
   $url = DOKU_URL . 'lib/plugins/ckgedit/scripts/script-cmpr.js';

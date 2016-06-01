@@ -1,4 +1,4 @@
-rev_16-May_29-17_43
+rev_16-Jun_01-15_19
 
 28 Feb 2013
 Added support for interwiki links
@@ -903,4 +903,7 @@ Set [captcha][forusers] = 0 if auth >= WRITE
 
 29 May
 Default complex tables to true
+
+1 Jun
+Hide captcha error when switching to DW Edit if no changes made. Some syntax updates.
 
