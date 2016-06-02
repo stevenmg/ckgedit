@@ -18,6 +18,7 @@ class action_plugin_ckgedit_meta extends DokuWiki_Action_Plugin {
   var $wiki_text;  
   var $dw_priority_group;
   var $dw_priority_metafn;
+  var $captcha = false;
   function __construct() {
       $this->helper = plugin_load('helper', 'ckgedit');
       $this->dokuwiki_priority = $this->getConf('dw_priority');
@@ -26,6 +27,10 @@ class action_plugin_ckgedit_meta extends DokuWiki_Action_Plugin {
       if(!file_exists($this->dw_priority_metafn)) {
           io_saveFile($this->dw_priority_metafn, serialize(array()));
       }
+       
+       if(!plugin_isdisabled('captcha')) {    
+           $this->captcha = true; 
+        }
   }
   /*
    * Register its handlers with the dokuwiki's event controller
@@ -549,13 +554,12 @@ function check_userfiles() {
        global $conf;
        
        
-       
        $acl_defines = array('EDIT'=> 2,'CREATE'=> 4,'UPLOAD'=> 8,'DELETE'=> 16,'ADMIN'=> 255);
        $_auth =  $this->getConf('captcha_auth');
        $auth_captcha = (int)$acl_defines[$_auth];     
        $auth = auth_quickaclcheck($ID);  
-       //msg($auth . '>=' . $auth_captcha );
-       if($auth >= $auth_captcha && !empty($conf['plugin']['captcha'])) {
+
+       if($auth >= $auth_captcha && $this->captcha) {         
            $conf['plugin']['captcha']['forusers']=0;
        }
        $JSINFO['confirm_delete']= $this->getLang('confirm_delete');
