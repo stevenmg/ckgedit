@@ -859,7 +859,7 @@ var ckgedit_xcl_fonts =parseInt  ("<?php echo $this->getConf('font_options') ;?>
 var ckgedit_xcl_colors =parseInt("<?php echo $this->getConf('color_options') ;?>");
 var ckgedit_xcl_styles = (ckgedit_xcl_fonts + ckgedit_xcl_colors ==2) ? true : false;
 var HTMLParser_DEBUG = "";
-
+var ckgedit_hasCaptcha = "<?php echo $this->captcha?1:0?>";
 
 <?php if($this->debug) { ?>
    function HTMLParser_debug() {        
