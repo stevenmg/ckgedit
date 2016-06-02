@@ -1800,7 +1800,7 @@ jQuery( "#ebtn__delete" ).mouseup(function() {
 
 jQuery( "#ebtn__dwedit" ).click(function() { 
    ckgedit_to_dwedit = true;
-   if(window.dwfckTextChanged) {
+   if(!window.dwfckTextChanged) {
       jQuery('#dw__editform').append('<input type="hidden" id="ckged_captcha_err" name="ckged_captcha_err" value="hide" />');
    }
    setDWEditCookie(2, this);parse_wikitext('edbtn__save');this.form.submit();

@@ -547,14 +547,22 @@ function check_userfiles() {
        global $JSINFO;
        global  $INPUT;
        global $conf;
+       
+       
+       
+       $acl_defines = array('EDIT'=> 2,'CREATE'=> 4,'UPLOAD'=> 8,'DELETE'=> 16,'ADMIN'=> 255);
+       $_auth =  $this->getConf('captcha_auth');
+       $auth_captcha = (int)$acl_defines[$_auth];     
        $auth = auth_quickaclcheck($ID);  
-       if($auth >= 4 && !empty($conf['plugin']['captcha'])) {
+       //msg($auth . '>=' . $auth_captcha );
+       if($auth >= $auth_captcha && !empty($conf['plugin']['captcha'])) {
            $conf['plugin']['captcha']['forusers']=0;
        }
        $JSINFO['confirm_delete']= $this->getLang('confirm_delete');
        $JSINFO['doku_base'] = DOKU_BASE ;
        $JSINFO['cg_rev'] = $INPUT->str('rev');
-       $JSINFO['hide_captcha_error'] = $INPUT->str('ckged_captcha_err');      
+       $JSINFO['hide_captcha_error'] = $INPUT->str('ckged_captcha_err','none');
+       
 	   $this->check_userfiles(); 
 	   $this->profile_dwpriority=($this->dokuwiki_priority && $this->in_dwpriority_group()) ? 1 :  0; 
        if(isset($_COOKIE['FCK_NmSp'])) $this->set_session(); 
