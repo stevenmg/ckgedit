@@ -1,4 +1,4 @@
-rev_16-Jun_01-22_41
+rev_16-Jun_02-04_42
 
 28 Feb 2013
 Added support for interwiki links
@@ -907,4 +907,7 @@ Default complex tables to true
 1 Jun
 Hide captcha error when switching to DW Edit if no changes made. Some syntax updates.
 Fix to hide captcha error.
+
+2 Jun
+Updated script-cmpr.js
 
