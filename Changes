@@ -1,4 +1,4 @@
-rev_16-Jun_02-12_52
+rev_16-Jun_04-06_44
 
 28 Feb 2013
 Added support for interwiki links
@@ -912,4 +912,7 @@ Fix to hide captcha error.
 Updated script-cmpr.js
 Changed plugin-captcha check to plugin_isdisabled()
 added check for captcha before appending captcha_err hide 
+
+4 Jun
+Added entry for $lang[captcha_auth] in en/settings.php
 
