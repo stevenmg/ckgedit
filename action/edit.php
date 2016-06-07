@@ -229,12 +229,12 @@ class action_plugin_ckgedit_edit extends DokuWiki_Action_Plugin {
          $useComplexTables=false;
       }
       
-      if(strpos($text, '%%') !== false) {  
-
+      if(strpos($text, '%%') !== false || strpos($text, '\\\\') !== false ) {  
         $text = preg_replace_callback(
             "/<(nowiki|code|file)>(.*?)<\/(nowiki|code|file)/ms",
             function ($matches) {
                 $matches[0] = str_replace('%%', 'DBLPERCENT',$matches[0]);
+                $matches[0] =  str_replace('\\ ', 'DBLBACKSPLASH',$matches[0]);
                 return $matches[0];
             },
            $text
@@ -1140,6 +1140,8 @@ $text = preg_replace_callback(
         $xhtml = preg_replace("/col\d+\s+(\w+align)/ms", "$1",$xhtml);  //remove col number for cell prpoerties dialog
         $xhtml = str_replace('ckgeditFONTOpen', '&amp;lt;font',$xhtml);  // protect font markup in code blocks
         $xhtml = str_replace('ckgeditFONTClose', 'font&amp;gt;',$xhtml);
+        $xhtml = str_replace('DBLBACKSPLASH', '\\ ',$xhtml);
+        //DBLBACKSPLASH
        if($smiley_as_text) {
            if($haveDokuSmilies) {
                  $s_values = array_values($Smilies);

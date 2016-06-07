@@ -1,4 +1,4 @@
-rev_16-Jun_04-06_44
+rev_16-Jun_06-19_42
 
 28 Feb 2013
 Added support for interwiki links
@@ -916,3 +916,5 @@ added check for captcha before appending captcha_err hide
 4 Jun
 Added entry for $lang[captcha_auth] in en/settings.php
 
+6 Jun
+Fixed bug which converted  double backslash to single in code blocks
