@@ -1,4 +1,4 @@
-rev_16-Jun_06-19_42
+rev_16-Jun_09-14_03
 
 28 Feb 2013
 Added support for interwiki links
@@ -917,4 +917,7 @@ added check for captcha before appending captcha_err hide
 Added entry for $lang[captcha_auth] in en/settings.php
 
 6 Jun
-Fixed bug which converted  double backslash to single in code blocks
+Fixed bug which converted double backslash to single in code blocks
+
+9 Jun
+Provide for skipentity in edit.php prepcoessor
