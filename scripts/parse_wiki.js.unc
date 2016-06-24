@@ -1107,6 +1107,7 @@ function parse_wikitext(id) {
                  return; 
          }
     if(this.in_endnotes && tag == 'a') return;
+    if(tag == 'a')   this.in_link = false;    
     if(this.link_only){     
        this.link_only=false;
        return;
