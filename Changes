@@ -1,4 +1,4 @@
-rev_16-Jun_24-16_20
+rev_16-Jun_26-10_19
 
 28 Feb 2013
 Added support for interwiki links
@@ -923,4 +923,8 @@ Fixed bug which converted double backslash to single in code blocks
 Provide for skipentity in edit.php prepcoessor
 
 24 Jun
-Fixed bug which removed formats when llnk preceded format in lists
+Fixed bug which removed formats when link preceded format in lists
+
+26 Jun
+Slight refactoring of above
+
