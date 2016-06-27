@@ -1,4 +1,4 @@
-rev_16-Jun_26-12_50
+rev_16-Jun_27-06_22
 
 28 Feb 2013
 Added support for interwiki links
@@ -928,4 +928,7 @@ Fixed bug which removed formats when link preceded format in lists
 26 Jun
 Slight refactoring of above
 Moved end notes check back to original position at l.1109
+
+27 Jun
+Updated DW Korean lang files
 
